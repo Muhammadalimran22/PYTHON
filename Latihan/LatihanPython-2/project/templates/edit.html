@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Edit Mahasiswa</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>✏️ Edit Mahasiswa</h1>
+
+      <form method="POST">
+        <input type="text" name="nama" value="{{ mahasiswa.nama }}" required />
+        <input
+          type="number"
+          name="nilai"
+          value="{{ mahasiswa.nilai }}"
+          required
+        />
+        <button type="submit">Simpan</button>
+        <a href="/" class="btn-kembali">Kembali</a>
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,77 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f9;
+  padding: 20px;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+.form-input input {
+  padding: 8px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  padding: 8px 15px;
+  border: none;
+  background-color: #3e8ed0;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #337ab7;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table th,
+table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+table th {
+  background-color: #f1f1f1;
+}
+
+.kosong {
+  color: #888;
+  font-style: italic;
+  margin-top: 20px;
+}
+
+a {
+  color: #3e8ed0;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.btn-kembali {
+  margin-left: 10px;
+  background-color: #ccc;
+  padding: 8px 12px;
+  border-radius: 5px;
+}

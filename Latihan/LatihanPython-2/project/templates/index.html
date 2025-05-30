@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Data Mahasiswa</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>📘 Data Mahasiswa</h1>
+
+      <form action="/tambah" method="POST" class="form-input">
+        <input type="text" name="nama" placeholder="Nama" required />
+        <input type="text" name="nim" placeholder="NIM" required />
+        <input type="number" name="nilai" placeholder="Nilai" required />
+        <button type="submit">Tambah</button>
+      </form>
+
+      {% if daftar_mahasiswa %}
+      <table>
+        <thead>
+          <tr>
+            <th>Nama</th>
+            <th>NIM</th>
+            <th>Nilai</th>
+            <th>Nilai Huruf</th>
+            <th>Aksi</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for mhs in daftar_mahasiswa %}
+          <tr>
+            <td>{{ mhs.nama }}</td>
+            <td>{{ mhs.nim }}</td>
+            <td>{{ mhs.nilai }}</td>
+            <td>
+              {% if mhs.nilai >= 90 %} A {% elif mhs.nilai >= 80 %} B {% elif
+              mhs.nilai >= 70 %} C {% elif mhs.nilai >= 60 %} D {% else %} E {%
+              endif %}
+            </td>
+            <td>
+              <a href="/edit/{{ mhs.nim }}">Edit</a> |
+              <a
+                href="/hapus/{{ mhs.nim }}"
+                onclick="return confirm('Yakin ingin hapus?')"
+                >Hapus</a
+              >
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      {% else %}
+      <p class="kosong">Belum ada data mahasiswa.</p>
+      {% endif %}
+    </div>
+  </body>
+</html>
